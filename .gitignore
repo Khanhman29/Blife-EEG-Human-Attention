@@ -1,0 +1,9 @@
+**/x64/
+.vs
+*.txt
+**.jpg
+VirtualKeyboardGui/icon_scale.jpg
+VirtualKeyboardGui/talkHistory.csv
+VirtualKeyboardGui/speak.txt
+VirtualKeyboardGui/DeviceList.txt
+VirtualKeyboardGui/x64/

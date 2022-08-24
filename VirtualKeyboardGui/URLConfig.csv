@@ -1,0 +1,11 @@
+﻿keyType,name,key,exFrom,exTime,dwTime,pos,span,spanX,spanY,scale,background,numOfCol,numOfRow,KB
+1,URL_1,https://mail.google.com/mail/mu,,0.5,2,0,1,4,1,1,,8,5,
+1,URL_2,https://m.youtube.com,,0.5,2,8,1,4,1,1,,,,
+1,Home,⌂,,0.5,2,4,1,2,2,1,,,,
+1,lockButton,,,0.5,2,6,1,2,2,1,Imgs/HomePage/lock,,,
+1,URL_3,https://www.google.com/,,0.5,2,16,1,4,1,1,,,,
+1,URL_4,https://dantri.com.vn/,,0.5,2,20,1,4,1,1,,,,
+1,URL_5,https://vnexpress.net/,,0.5,2,24,1,4,1,1,,,,
+1,URL_6,https://www.tienphong.vn/,,0.5,2,28,1,4,1,1,,,,
+1,URL_7,https://baomoi.com/,,0.5,2,32,1,4,1,1,,,,
+1,URL_8,https://nhandan.com.vn/,,0.5,2,36,1,4,1,1,,,,

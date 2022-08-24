@@ -1,0 +1,5 @@
+﻿keyType,name,key,exFrom,exTime,dwTime,pos,span,spanX,spanY,scale,background,numOfCol,numOfRow,KB
+1,Caption,Luyện tập chuyển động mắt để chọn phím - Bài 1,,0.5,2,0,1,3,1,1,,4,3,
+1,Home,⌂,,0.5,2,3,1,1,1,1,,,,
+1,BT0,Phím màu xanh,,0.5,8,4,1,2,2,1,,,,
+1,Next,Bài tiếp theo,,0.5,8,6,1,2,2,1,,,,

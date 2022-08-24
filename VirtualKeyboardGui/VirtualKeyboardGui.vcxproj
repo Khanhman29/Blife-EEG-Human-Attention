@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5CE4353C-AD6A-4854-85B6-EDA7E6742C3D}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+    <ProjectName>VirtualKeyboardGui</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtModules>core;gui;multimedia;widgets</QtModules>
+    <QtInstall>Qt-5.12.12</QtInstall>
+    <QtDeploy>true</QtDeploy>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtModules>core;gui;multimedia;widgets</QtModules>
+    <QtInstall>Qt-5.12.12</QtInstall>
+    <QtDeploy>true</QtDeploy>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile />
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)lsl\lib;$(ProjectDir)tobii_stream_engine\lib;$(ProjectDir)MQTT\lib;$(ProjectDir)lsl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>tobii/tobii_stream_engine.lib;paho-mqtt3a.lib;paho-mqtt3c.lib;lsl.lib;lsl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent />
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)lsl\include;$(ProjectDir)tobii_stream_engine\include;$(ProjectDir)MQTT\include;$(ProjectDir)lsl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>xcopy /d/y "$(ProjectDir)lsl\bin\*.dll" "$(TargetDir)"
+xcopy /d/y "$(ProjectDir)tobii_stream_engine\lib\tobii\*.dll" "$(TargetDir)"
+xcopy /d/y "$(ProjectDir)MQTT\lib\*.dll" "$(TargetDir)"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)lsl\include;$(ProjectDir)tobii_stream_engine\include;$(ProjectDir)MQTT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)lsl\lib;$(ProjectDir)tobii_stream_engine\lib;$(ProjectDir)MQTT\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>tobii/tobii_stream_engine.lib;paho-mqtt3a.lib;paho-mqtt3c.lib;lsl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>xcopy /d/y "$(ProjectDir)lsl\bin\*.dll" "$(TargetDir)"
+xcopy /d/y "$(ProjectDir)tobii_stream_engine\lib\tobii\*.dll" "$(TargetDir)"
+xcopy /d/y "$(ProjectDir)MQTT\lib\*.dll" "$(TargetDir)"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AcController.cpp" />
+    <ClCompile Include="APIService.cpp" />
+    <ClCompile Include="CalibController.cpp" />
+    <ClCompile Include="DianosController.cpp" />
+    <ClCompile Include="DictionaryController.cpp" />
+    <ClCompile Include="FanController.cpp" />
+    <ClCompile Include="GreetingsController.cpp" />
+    <ClCompile Include="HomeService.cpp" />
+    <ClCompile Include="KeyboardController.cpp" />
+    <ClCompile Include="LightController.cpp" />
+    <ClCompile Include="MainMenuController.cpp" />
+    <ClCompile Include="NoteArea.cpp" />
+    <ClCompile Include="NoteController.cpp" />
+    <ClCompile Include="QAController.cpp" />
+    <ClCompile Include="read.cpp" />
+    <ClCompile Include="SettingController.cpp" />
+    <ClCompile Include="SettingService.cpp" />
+    <ClCompile Include="SmartHomeController.cpp" />
+    <ClCompile Include="SupportController.cpp" />
+    <ClCompile Include="TalkController.cpp" />
+    <ClCompile Include="TrainingController.cpp" />
+    <ClCompile Include="TvController.cpp" />
+    <ClCompile Include="TypingController.cpp" />
+    <QtRcc Include="menu.qrc" />
+    <QtUic Include="menu.ui" />
+    <QtMoc Include="menu.h" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="CalibController.h" />
+    <QtMoc Include="DictionaryController.h" />
+    <QtMoc Include="DianosController.h" />
+    <QtMoc Include="GreetingsController.h" />
+    <QtMoc Include="FanController.h" />
+    <QtMoc Include="AcController.h" />
+    <ClInclude Include="APIService.h" />
+    <ClInclude Include="HomeService.h" />
+    <ClInclude Include="Key.h" />
+    <ClInclude Include="Controller.h" />
+    <QtMoc Include="KeyboardController.h" />
+    <ClInclude Include="KeyData.h" />
+    <QtMoc Include="MainMenuController.h" />
+    <QtMoc Include="NoteController.h" />
+    <QtMoc Include="NoteArea.h" />
+    <QtMoc Include="LightController.h" />
+    <ClInclude Include="lslStreaming.h" />
+    <ClInclude Include="Notes.h" />
+    <QtMoc Include="QAController.h" />
+    <ClInclude Include="read.h" />
+    <QtMoc Include="SmartHomeController.h" />
+    <QtMoc Include="TrainingController.h" />
+    <QtMoc Include="TypingController.h" />
+    <QtMoc Include="TalkController.h" />
+    <QtMoc Include="SupportController.h" />
+    <QtMoc Include="TvController.h" />
+    <QtMoc Include="SettingController.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SettingService.h" />
+    <ClInclude Include="tobii_stream_engine\include\tobii\tobii.h" />
+    <ClInclude Include="tobii_stream_engine\include\tobii\tobii_advanced.h" />
+    <ClInclude Include="tobii_stream_engine\include\tobii\tobii_config.h" />
+    <ClInclude Include="tobii_stream_engine\include\tobii\tobii_licensing.h" />
+    <ClInclude Include="tobii_stream_engine\include\tobii\tobii_streams.h" />
+    <ClInclude Include="tobii_stream_engine\include\tobii\tobii_wearable.h" />
+    <ClInclude Include="uAudio\Scripts\Visualizer\uAudioPlayer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AcConfig.csv" />
+    <None Include="AppSetting.csv" />
+    <None Include="bangdau.csv" />
+    <None Include="BrowserControlConfig.csv" />
+    <None Include="CalibConfig.csv" />
+    <None Include="cpp.hint" />
+    <None Include="dau.csv" />
+    <None Include="DianosticsConfig.csv" />
+    <None Include="DictionaryConfig.csv" />
+    <None Include="dictionaryHistory.csv" />
+    <None Include="FanConfig.csv" />
+    <None Include="GetDeviceAPI.py" />
+    <None Include="GreetingsConfig.csv" />
+    <None Include="KeyboardConfig.csv" />
+    <None Include="LightConfig.csv" />
+    <None Include="MainMenuConfig.csv" />
+    <None Include="NoteConfig.csv" />
+    <None Include="QAConfig.csv" />
+    <None Include="scripts.py" />
+    <None Include="SettingConfig.csv" />
+    <None Include="SmartHomeConfig.csv" />
+    <None Include="SupportConfig.csv" />
+    <None Include="TalkConfig.csv" />
+    <None Include="talkHistory.csv" />
+    <None Include="textAreaConfig.csv" />
+    <None Include="Training12Config.csv" />
+    <None Include="Training1Config.csv" />
+    <None Include="Training2Config.csv" />
+    <None Include="Training3Config.csv" />
+    <None Include="Training4Config.csv" />
+    <None Include="Training5Config.csv" />
+    <None Include="Training6Config.csv" />
+    <None Include="Training7Config.csv" />
+    <None Include="TvConfig.csv" />
+    <None Include="TypingConfig.csv" />
+    <None Include="URLConfig.csv" />
+    <None Include="van.csv" />
+    <None Include="VideoConfig.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="gray_background.png" />
+    <Image Include="icon\0_b.png" />
+    <Image Include="icon\0_r.png" />
+    <Image Include="icon\1_b.png" />
+    <Image Include="icon\1_r.png" />
+    <Image Include="icon\2_b.png" />
+    <Image Include="icon\2_r.png" />
+    <Image Include="icon\3_b.png" />
+    <Image Include="icon\3_r.png" />
+    <Image Include="icon\4_b.png" />
+    <Image Include="icon\4_r.png" />
+    <Image Include="icon\5_b.png" />
+    <Image Include="icon\5_r.png" />
+    <Image Include="icon\6_b.png" />
+    <Image Include="icon\6_r.png" />
+    <Image Include="icon\7_b.png" />
+    <Image Include="icon\7_r.png" />
+    <Image Include="icon\8_b.png" />
+    <Image Include="icon\8_r.png" />
+    <Image Include="icon\9_b.png" />
+    <Image Include="icon\9_r.png" />
+    <Image Include="icon\ac_background.png" />
+    <Image Include="icon\fan_background.png" />
+    <Image Include="icon\home_background.png" />
+    <Image Include="icon\icon_color_change.png" />
+    <Image Include="icon\icon_Home_en_b.png" />
+    <Image Include="icon\icon_Home_en_r.png" />
+    <Image Include="icon\icon_Home_vn_b.png" />
+    <Image Include="icon\icon_Home_vn_r.png" />
+    <Image Include="icon\icon_language_change.png" />
+    <Image Include="icon\icon_level_1.png" />
+    <Image Include="icon\icon_level_2.png" />
+    <Image Include="icon\icon_level_3.png" />
+    <Image Include="icon\icon_next_channel_en_b.png" />
+    <Image Include="icon\icon_next_channel_en_r.png" />
+    <Image Include="icon\icon_next_channel_vn_b.png" />
+    <Image Include="icon\icon_next_channel_vn_r.png" />
+    <Image Include="icon\icon_off_en_b.png" />
+    <Image Include="icon\icon_off_en_r.png" />
+    <Image Include="icon\icon_off_vn_b.png" />
+    <Image Include="icon\icon_off_vn_r.png" />
+    <Image Include="icon\icon_on_en_b.png" />
+    <Image Include="icon\icon_on_en_r.png" />
+    <Image Include="icon\icon_on_vn_b.png" />
+    <Image Include="icon\icon_on_vn_r.png" />
+    <Image Include="icon\icon_prev_channel_en_b.png" />
+    <Image Include="icon\icon_prev_channel_en_r.png" />
+    <Image Include="icon\icon_prev_channel_vn_b.png" />
+    <Image Include="icon\icon_prev_channel_vn_r.png" />
+    <Image Include="icon\icon_swing.png" />
+    <Image Include="icon\icon_target_channel_en_b.png" />
+    <Image Include="icon\icon_target_channel_en_r.png" />
+    <Image Include="icon\icon_target_channel_vn_b.png" />
+    <Image Include="icon\icon_target_channel_vn_r.png" />
+    <Image Include="icon\icon_temp_down.png" />
+    <Image Include="icon\icon_temp_up.png" />
+    <Image Include="icon\icon_thermometer.png" />
+    <Image Include="icon\icon_volume_down_en_b.png" />
+    <Image Include="icon\icon_volume_down_en_r.png" />
+    <Image Include="icon\icon_volume_down_vn_b.png" />
+    <Image Include="icon\icon_volume_down_vn_r.png" />
+    <Image Include="icon\icon_volume_up_en_b.png" />
+    <Image Include="icon\icon_volume_up_en_r.png" />
+    <Image Include="icon\icon_volume_up_vn_b.png" />
+    <Image Include="icon\icon_volume_up_vn_r.png" />
+    <Image Include="icon\light_background.png" />
+    <Image Include="icon\st.png" />
+    <Image Include="icon\tv_background.png" />
+    <Image Include="icon\wood_texture.jpg" />
+    <Image Include="icon_scale.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="DeviceList.txt" />
+    <Text Include="speak.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="audio.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VirtualKeyboardGui.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

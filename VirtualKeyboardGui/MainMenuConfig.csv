@@ -1,0 +1,13 @@
+keyType,name,key,exFrom,exTime,dwTime,pos,span,spanX,spanY,scale,background,numOfCol,numOfRow,KB
+1,helpButton,,,0.5,2,0,1,1,1,1,Imgs/HomePage/bell,4,3,
+1,dianosButton,,,0.5,2,1,1,1,1,1,Imgs/HomePage/diagnostics,,,
+1,lockButton,,,0.5,2,2,1,1,1,1,Imgs/HomePage/lock,,,
+1,dictionaryButton,,,0.5,2,3,1,1,1,1,Imgs/HomePage/mybe,,,
+1,greetingsButton,,,0.5,2,4,1,1,1,1,Imgs/HomePage/handshake,,,
+1,qaButton,,,0.5,2,5,1,1,1,1,Imgs/HomePage/qa,,,
+1,supportButton,,,0.5,2,6,1,1,1,1,Imgs/HomePage/support,,,
+1,typeButton,,,0.5,2,7,1,1,1,1,Imgs/HomePage/abc,,,
+1,talkButton,,,0.5,2,8,1,1,1,1,Imgs/HomePage/chatting,,,
+1,noteButton,,,0.5,2,9,1,1,1,1,Imgs/HomePage/notebook,,,
+1,smarthomeButton,,,0.5,2,10,1,1,1,1,Imgs/HomePage/smarthome,,,
+1,browserButton,,,0.5,2,11,1,1,1,1,Imgs/HomePage/earth,,,

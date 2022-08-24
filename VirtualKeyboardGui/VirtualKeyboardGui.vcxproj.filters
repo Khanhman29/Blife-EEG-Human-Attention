@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="menu.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtUic Include="menu.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtMoc Include="menu.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClCompile Include="menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="read.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CalibController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SmartHomeController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TrainingController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TypingController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TalkController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DictionaryController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NoteController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NoteArea.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DianosController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GreetingsController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QAController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SupportController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LightController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TvController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FanController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AcController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="APIService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="read.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Key.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uAudio\Scripts\Visualizer\uAudioPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Notes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="APIService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HomeService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tobii_stream_engine\include\tobii\tobii.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tobii_stream_engine\include\tobii\tobii_advanced.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tobii_stream_engine\include\tobii\tobii_config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tobii_stream_engine\include\tobii\tobii_licensing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tobii_stream_engine\include\tobii\tobii_streams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tobii_stream_engine\include\tobii\tobii_wearable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lslStreaming.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+    <None Include="GetDeviceAPI.py" />
+    <None Include="AcConfig.csv" />
+    <None Include="FanConfig.csv" />
+    <None Include="LightConfig.csv" />
+    <None Include="SettingConfig.csv" />
+    <None Include="TvConfig.csv" />
+    <None Include="AppSetting.csv" />
+    <None Include="bangdau.csv" />
+    <None Include="BrowserControlConfig.csv" />
+    <None Include="CalibConfig.csv" />
+    <None Include="dau.csv" />
+    <None Include="DianosticsConfig.csv" />
+    <None Include="DictionaryConfig.csv" />
+    <None Include="dictionaryHistory.csv" />
+    <None Include="GreetingsConfig.csv" />
+    <None Include="KeyboardConfig.csv" />
+    <None Include="MainMenuConfig.csv" />
+    <None Include="NoteConfig.csv" />
+    <None Include="QAConfig.csv" />
+    <None Include="scripts.py" />
+    <None Include="SmartHomeConfig.csv" />
+    <None Include="SupportConfig.csv" />
+    <None Include="TalkConfig.csv" />
+    <None Include="talkHistory.csv" />
+    <None Include="textAreaConfig.csv" />
+    <None Include="Training1Config.csv" />
+    <None Include="Training2Config.csv" />
+    <None Include="Training3Config.csv" />
+    <None Include="Training4Config.csv" />
+    <None Include="Training5Config.csv" />
+    <None Include="Training6Config.csv" />
+    <None Include="Training7Config.csv" />
+    <None Include="Training12Config.csv" />
+    <None Include="URLConfig.csv" />
+    <None Include="VideoConfig.csv" />
+    <None Include="van.csv" />
+    <None Include="TypingConfig.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="CalibController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="KeyboardController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="SmartHomeController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="MainMenuController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TrainingController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TypingController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TalkController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="DictionaryController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="NoteController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="NoteArea.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="DianosController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="GreetingsController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="QAController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="SupportController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="LightController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TvController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FanController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="AcController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="SettingController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon\wood_texture.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\ac_background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\fan_background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\light_background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\st.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\tv_background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\home_background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\0_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\0_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\1_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\1_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\2_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\2_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\3_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\3_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\4_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\4_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\5_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\5_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\6_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\6_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\7_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\7_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\8_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\8_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\9_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\9_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_color_change.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_Home_en_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_Home_en_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_Home_vn_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_Home_vn_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_language_change.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_level_1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_level_2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_level_3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_next_channel_en_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_next_channel_en_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_next_channel_vn_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_next_channel_vn_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_off_en_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_off_en_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_off_vn_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_off_vn_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_on_en_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_on_en_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_on_vn_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_on_vn_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_prev_channel_en_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_prev_channel_en_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_prev_channel_vn_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_prev_channel_vn_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_swing.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_target_channel_en_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_target_channel_en_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_target_channel_vn_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_target_channel_vn_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_temp_down.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_temp_up.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_thermometer.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_volume_down_en_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_volume_down_en_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_volume_down_vn_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_volume_down_vn_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_volume_up_en_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_volume_up_en_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_volume_up_vn_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon\icon_volume_up_vn_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="gray_background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon_scale.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="DeviceList.txt" />
+    <Text Include="speak.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="audio.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VirtualKeyboardGui.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

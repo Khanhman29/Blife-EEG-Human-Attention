@@ -1,0 +1,5 @@
+﻿keyType,name,key,exFrom,exTime,dwTime,pos,span,spanX,spanY,scale,background,numOfCol,numOfRow,KB
+3,Screen,,,0.5,2,0,6,6,4,1,Imgs/notebackground,7,4,
+1,Home,⌂,,0.5,2,6,1,1,1,1,,,,
+1,Play,▶,,0.5,2,13,1,1,2,1,,,,
+1,Pause,||,,0.5,2,27,1,1,1,1,,,,

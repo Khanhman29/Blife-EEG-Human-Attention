@@ -1,0 +1,7 @@
+﻿keyType,name,key,exFrom,exTime,dwTime,pos,span,spanX,spanY,scale,background,numOfCol,numOfRow,KB
+1,disp,Hiệu chỉnh mắt và luyện tập,,0.5,2,0,1,3,1,1,,4,3,
+1,Home,⌂,,0.5,2,3,1,1,1,1,,,,
+1,calib,Hiệu chỉnh mắt,,0.5,2,4,1,2,2,1,,,,
+1,train,Luyện tập,,0.5,2,6,1,2,1,1,,,,
+1,HDLapDat,Hướng dẫn lắp đặt,,0.5,2,10,1,1,1,1,,,,
+1,HDSuDung,Hướng dẫn sử dụng,,0.5,2,11,1,1,1,1,,,,
