@@ -21,9 +21,9 @@
     </QtDeploy>
   </ItemDefinitionGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <QtLastBackgroundBuild>2022-01-08T08:36:01.7726463Z</QtLastBackgroundBuild>
+    <QtLastBackgroundBuild>2023-09-08T03:39:12.4196693Z</QtLastBackgroundBuild>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <QtLastBackgroundBuild>2021-12-25T16:11:10.3373128Z</QtLastBackgroundBuild>
+    <QtLastBackgroundBuild>2023-09-08T03:39:12.7176862Z</QtLastBackgroundBuild>
   </PropertyGroup>
 </Project>

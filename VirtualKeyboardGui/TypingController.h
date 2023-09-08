@@ -20,6 +20,7 @@ private slots:
     void deleteClick();
     void clearClick();
     void txtClick();
+    void timecount();
 
 private:
     void addHistory(QString, QString, QList<QMap<QString, QString>>);

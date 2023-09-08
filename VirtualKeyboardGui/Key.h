@@ -91,7 +91,7 @@ public:
     static void gaze_point_callback(tobii_gaze_point_t const* gaze_point, void* user_data) {
         if (gaze_point->validity == TOBII_VALIDITY_VALID) {
             gaze_x = gaze_point->position_xy[0];
-            gaze_y = gaze_point->position_xy[1];
+             gaze_y = gaze_point->position_xy[1];
         }
         else {
             gaze_x = 0.0;
@@ -102,7 +102,7 @@ public:
     void updateBackground(QPushButton* btn, QString font_size) {
         float scaled = timeCount / keyData.dwTime;
         if (scaled == 0) {
-            btn->setStyleSheet(QString("QPushButton{font-size: %1px; color: %2;}").arg(font_size).arg(color));
+            `btn->setStyleSheet(QString("QPushButton{font-size: %1px; color: %2;}").arg(font_size).arg(color));
         }
         else {
             QImage img = QImage(":/background/gray_background.png").scaled(btn->size().width(), btn->size().height());

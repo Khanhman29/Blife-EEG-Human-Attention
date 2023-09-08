@@ -5,11 +5,13 @@
 #include <qsizepolicy.h>
 #include "lslStreaming.h"
 
+float boostFactor = 0;
 float Key::gaze_x = 0;
 float Key::gaze_y = 0;
 int ROW = 0;
 int COL = 0;
-
+bool boosting = false;
+int  prevNumOfPos = 0;
 int DICTIONARY_CHOOSE;
 int DICTIONARY_CHOOSE_TYPE;
 QString PREVIOUS_WIDGET = "";
@@ -116,14 +118,13 @@ Menu::Menu(QWidget *parent)
 }
 
 void Menu::update() {
-
     int cursor_x = this->mapFromGlobal(QCursor::pos()).x();
     int cursor_y = this->mapFromGlobal(QCursor::pos()).y();
     int width = QApplication::desktop()->screenGeometry().width();
     int height = QApplication::desktop()->screenGeometry().height();
     if (error == TOBII_ERROR_NO_ERROR) {
         SetCursorPos((int)width * Key::gaze_x, (int)height * Key::gaze_y);
-        ETOutlet.startSend((int)width * Key::gaze_x * 100 / width, (int)height * Key::gaze_y * 100 / height);
+        //ETOutlet.startSend((int)width * Key::gaze_x * 100 / width, (int)height * Key::gaze_y * 100 / height);
         // Optionally block this thread until data is available. Especially useful if running in a separate thread.
         error = tobii_wait_for_callbacks(1, &device);
         assert(error == TOBII_ERROR_NO_ERROR || error == TOBII_ERROR_TIMED_OUT);
@@ -132,9 +133,9 @@ void Menu::update() {
         error = tobii_device_process_callbacks(device);
         assert(error == TOBII_ERROR_NO_ERROR);
     }
-    else {
-        ETOutlet.startSend(cursor_x*100/width, cursor_y*100/height);
-    }
+    //else {
+        //ETOutlet.startSend(cursor_x*100/width, cursor_y*100/height);
+   // }
     
     ROW = WIDGET_CONFIG_SIZE[CURRENT_WIDGET]["row"];
     COL = WIDGET_CONFIG_SIZE[CURRENT_WIDGET]["col"];
@@ -149,6 +150,7 @@ void Menu::update() {
     else {
         //convert x,y coordinates to number in position map
         numOfPos = COL * abs(((int)(cursor_y * ROW) / this->height())) + (int)(cursor_x * COL) / this->width();
+        ETOutlet.startSend(numOfPos);
     }
     
     qDebug() << numOfPos;
@@ -228,12 +230,30 @@ void Menu::update() {
                 }
                 Key getKey = dictKey[name];
                 if (getKey.keyData.name == key.keyData.name) {
-                    float boostTime = 2;
-                    getKey.timeCount += (float) 1.0* getKey.time.msecsTo(QTime::currentTime())/1000;
-                    if (EEGInlet.getLastestData()) {
-                        getKey.timeCount += boostTime;
+                    float newBoostFactor = EEGInlet.getLastestData();
+                    if (newBoostFactor != 0) { // Chỉ cập nhật boostFactor khi latestData khác -1
+                        boostFactor = newBoostFactor;
                     }
-                    
+                    //if (EEGInlet.getLastestData()) {
+                    boosting=true;
+                    //}
+                    if (prevNumOfPos != numOfPos) {
+                        boosting = false;
+                    }
+                    if (prevNumOfPos ==numOfPos && boosting && boostFactor>0){
+                        getKey.timeCount += ((float)1.0 + boostFactor) * getKey.time.msecsTo(QTime::currentTime()) / 1000;
+                        QString newTitle = QString("Confidence: %1").arg(EEGInlet.getLastestData());
+                        this->setWindowTitle(newTitle);
+                    }
+                    else if(prevNumOfPos == numOfPos && boosting && boostFactor < 0) {
+                        getKey.timeCount += ((float)1.0+(boostFactor)*(1/2)* getKey.time.msecsTo(QTime::currentTime()) / 1000;
+                        QString newTitle = QString("Confidence: %1").arg(EEGInlet.getLastestData());
+                        this->setWindowTitle(newTitle);
+                    }
+                    else {
+                        getKey.timeCount += (float)1.0 * getKey.time.msecsTo(QTime::currentTime()) / 1000;
+                    }
+                    prevNumOfPos = numOfPos;
                     getKey.time = QTime::currentTime();
                     
                     // exTime
@@ -297,12 +317,20 @@ void Menu::update() {
                             }
                         }
                     }
-
+                    //if (EEGInlet.getLastestData()) {
+                        //getKey.timeCount += boostTime;
+                    //}
                     if (getKey.timeCount >= getKey.keyData.dwTime) {
+
+                        //ETOutlet.starSend(-1, -1);
+                        qDebug() << btn->text();
+                        //QString newTitle = QString("Current time count: %1").arg(EEGInlet.getLastestData());
+                        //this->setWindowTitle(newTitle);
                         getKey.timeCount = 0;
                         getKey.color = "black";
                         listKey.removeAt(listKey.indexOf(getKey.keyData.name));
                         btn->clicked();
+                        boosting = false;
                     }
                     getKey.updateBackground(btn, "40");
                     dictKey[getKey.keyData.name] = getKey;

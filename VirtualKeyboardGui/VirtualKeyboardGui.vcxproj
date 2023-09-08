@@ -37,12 +37,12 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtModules>core;gui;multimedia;widgets</QtModules>
-    <QtInstall>Qt-5.12.12</QtInstall>
+    <QtInstall>5.12.12.msvc2017_64</QtInstall>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtModules>core;gui;multimedia;widgets</QtModules>
-    <QtInstall>Qt-5.12.12</QtInstall>
+    <QtInstall>5.12.12.msvc2017_64</QtInstall>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">

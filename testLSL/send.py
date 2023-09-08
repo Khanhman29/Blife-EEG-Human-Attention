@@ -1,5 +1,4 @@
-"""Example program to demonstrate how to send a multi-channel time series to
-LSL."""
+
 import sys
 import getopt
 
@@ -11,7 +10,7 @@ from pylsl import StreamInfo, StreamOutlet, local_clock
 
 def main():
     srate = 1
-    name = 'EEGStream'
+    name = 'HMIResultData'
     type = 'EEG'
     n_channels = 1
     help_string = 'SendData.py -s <sampling_rate> -n <stream_name> -t <stream_type>'

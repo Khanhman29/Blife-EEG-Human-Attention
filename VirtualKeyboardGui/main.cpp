@@ -1,6 +1,9 @@
 #include "menu.h"
 #include <QtWidgets/QApplication>
-
+#include "Typing_booster/TypingBooster.cpp"
+#include <stdlib.h>
+#include <iostream>
+#include <stdio.h>
 
 tobii_api_t* api;
 tobii_device_t* device;
@@ -15,12 +18,14 @@ static void url_receiver(char const* url, void* user_data) {
         strcpy(buffer, url);
     }
 }
-
 int main(int argc, char* argv[])
     
 {
-
-
+    //std::thread t1([] {
+      //  TypingBooster typingBooster;
+        //typingBooster.RunpythonCode();
+        //});
+    //t1.detach();
     // create api
     error = tobii_api_create(&api, NULL, NULL);
 

@@ -64,7 +64,7 @@ TypingController::TypingController(QWidget *parent)
 			connect(btn, SIGNAL(clicked()), this, SLOT(wordsClick()));
 			listKeyButton["Words"] = btn;
 		}
-		else if (newKey.keyData.name == "Space") {
+		else if (newKey.keyData.name == "Space") {	 
 			space = newKey;
 			connect(btn, SIGNAL(clicked()), this, SLOT(spaceClick()));
 			listKeyButton["Space"] = btn;
@@ -82,6 +82,11 @@ TypingController::TypingController(QWidget *parent)
 			keys.append(newKey);
 			connect(btn, SIGNAL(clicked()), this, SLOT(txtClick()));
 			listKeyButton[newKey.keyData.name] = btn;
+		}
+		else if (newKey.keyData.name == "timecount") {
+			words = newKey;
+			connect(btn, SIGNAL(clicked()), this, SLOT(timecount()));
+			listKeyButton["timecount"] = btn;
 		}
 
 		int r = keydata.pos / COL;
@@ -194,6 +199,20 @@ void TypingController::saveHistorytoFile(QList<QMap<QString, QString>> talkHisto
 }
 
 void TypingController::wordsClick() {
+	QPushButton* btn = qobject_cast<QPushButton*>(sender());
+	// training
+	if (isTraining && currKey < trainingKey.count()) {
+		if (trainingKey[currKey] == "talk") {
+			currKey++;
+			if (currKey == trainingKey.count()) isTrainingFinished = true;
+			displayTXTKeys();
+		}
+	}
+	if (btn->text() != "") {
+		loadAudio(btn->text());
+	}
+}
+void TypingController::timecount() {
 	QPushButton* btn = qobject_cast<QPushButton*>(sender());
 	// training
 	if (isTraining && currKey < trainingKey.count()) {

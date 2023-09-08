@@ -54,43 +54,19 @@ public:
 			try {
 				auto now = std::chrono::high_resolution_clock::now();
 				inlet->pull_sample(sample);
-				//if (now >= next_sample_time) {
-
-				//	// start receiving & displaying the data
-				//	// pull a single sample
-				//	
-				//	//printChunk(sample, inlet->get_channel_count());
-				//	// Sleep so the outlet will have time to push some samples
-				//	// std::this_thread::sleep_for(std::chrono::milliseconds(500));
-
-				//	// pull a chunk into a nested vector - easier, but slower
-				//	/*inlet->pull_chunk(chunk_nested_vector);
-				//	printChunk(chunk_nested_vector);*/
-
-				//	// std::this_thread::sleep_for(std::chrono::milliseconds(500));
-
-				//	// pull a multiplexed chunk into a flat vector
-				//	// inlet.pull_chunk_multiplexed(sample);
-				//	// std::cout << sample.size();
-				//	// printChunk(sample, inlet->get_channel_count());
-				//	next_sample_time = now + std::chrono::microseconds(sample_dur_us);
-				//}
 			}
 			catch (std::exception& e) {
 				std::cerr << "Got an exception: " << e.what() << std::endl;
 			}
 		}
 	}
-	//int32_t getSampleDuration() {
-	//	return sample_dur_us;
-	//}
 	float getLastestData() {
 		if (!sample.empty()) {
 			float data = sample.back();
+			//sample.pop_back();
 			// check data to boost 1 time
 			//if not pop_back, main loop time > time pull data. So we push more time than 1 
-			if (data ==1) sample.pop_back();
-			
+			//if (data ==1) sample.pop_back();	
 			return data;
 		}
 		else {
@@ -98,6 +74,7 @@ public:
 		}
 	}
 };
+
 
 class Outlet {
 private:
@@ -142,15 +119,14 @@ public:
 		return sample_dur_us;
 	}
 
-	void startSend(int posX, int posY) {
+	void startSend(int NumOfPos) {
 		try {
 			auto now = std::chrono::high_resolution_clock::now();
 			
 			if (now >= next_sample_time) {
-				sample[0] = posX;
-				sample[1] = posY;
+				sample[0] = NumOfPos;
 				// send the sample
-				std::cout << sample[0] << "\t" << sample[1] << std::endl;
+				std::cout << sample[0] << std::endl;
 				outlet->push_sample(sample);
 				//outlet->push_chunk(sample);
 				//outlet->push_chunk_multiplexed(sample);
